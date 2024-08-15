@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "preinstall": "npm install --platform=linuxmusl sharp",
     "start": "node src/index.js",
     "dev": "nodemon --env-file=config.env src/index.js"
   },
