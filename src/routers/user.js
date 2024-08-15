@@ -9,9 +9,7 @@ const { WelcomeEmail, AccCancelEmail } = require('../emails/account');
 router.post('/users', async (req, res) => {
   try {
     const user = new User(req.body);
-    console.log(user, '123');
     await user.save();
-    console.log(user, '456');
     WelcomeEmail(user.email, user.name);
     const token = await user.generateAuthToken();
     res.status(201).send({ user, token });
